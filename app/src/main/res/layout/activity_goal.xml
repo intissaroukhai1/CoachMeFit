@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:background="#FFFFFF">
+
+    <TextView
+        android:id="@+id/txtGoalTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Envoyer mon objectif"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:textColor="#111111"
+        android:layout_marginBottom="16dp" />
+
+    <TextView
+        android:id="@+id/txtProgramName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Programme :"
+        android:textSize="16sp"
+        android:textColor="#555555"
+        android:layout_marginBottom="16dp" />
+
+    <EditText
+        android:id="@+id/editGoal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Exemple : Je veux perdre 5 kg"
+        android:inputType="textMultiLine"
+        android:minLines="3" />
+
+    <Button
+        android:id="@+id/btnSendGoalResult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Envoyer"
+        android:layout_marginTop="20dp" />
+
+</LinearLayout>

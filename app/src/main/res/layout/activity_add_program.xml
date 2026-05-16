@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ajouter un programme"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:textColor="#111111"
+            android:layout_marginBottom="20dp" />
+
+        <EditText
+            android:id="@+id/editTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nom du programme"
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/editLevel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Niveau : Débutant / Intermédiaire / Avancé"
+            android:inputType="text"
+            android:layout_marginTop="12dp" />
+
+        <EditText
+            android:id="@+id/editObjective"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Objectif : Perte de poids / Musculation..."
+            android:inputType="text"
+            android:layout_marginTop="12dp" />
+
+        <EditText
+            android:id="@+id/editDuration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Durée : 4 semaines"
+            android:inputType="text"
+            android:layout_marginTop="12dp" />
+
+        <EditText
+            android:id="@+id/editPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Prix en TND"
+            android:inputType="numberDecimal"
+            android:layout_marginTop="12dp" />
+
+        <EditText
+            android:id="@+id/editLocation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Localisation de la salle"
+            android:inputType="text"
+            android:layout_marginTop="12dp" />
+
+        <EditText
+            android:id="@+id/editDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Description du programme"
+            android:inputType="textMultiLine"
+            android:minLines="3"
+            android:layout_marginTop="12dp" />
+
+        <Button
+            android:id="@+id/btnSaveProgram"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Enregistrer"
+            android:layout_marginTop="24dp" />
+
+    </LinearLayout>
+
+</ScrollView>

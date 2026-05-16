@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "59946708284",
+    "project_id": "fitcoachmanager",
+    "storage_bucket": "fitcoachmanager.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:59946708284:android:4d3b5643620c12f5784239",
+        "android_client_info": {
+          "package_name": "com.example.coachmefit"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAvVaTlJdr96Hrcqsn45SGFaVUUyXv1axg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
