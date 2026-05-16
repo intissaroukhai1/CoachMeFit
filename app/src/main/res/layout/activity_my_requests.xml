@@ -11,11 +11,10 @@
         android:orientation="vertical"
         android:padding="24dp">
 
-        <!-- Header -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Programmes"
+            android:text="Mes demandes"
             android:textSize="34sp"
             android:textStyle="bold"
             android:textColor="#FFFFFF"
@@ -24,13 +23,12 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Consultez tous les programmes sportifs créés."
+            android:text="Suivez le statut de vos objectifs envoyés au coach."
             android:textSize="15sp"
             android:textColor="#DDEFE3"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="28dp" />
 
-        <!-- Card container -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -42,7 +40,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Liste des programmes"
+                android:text="Historique des demandes"
                 android:textSize="22sp"
                 android:textStyle="bold"
                 android:textColor="#111111"
@@ -51,13 +49,13 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Les programmes enregistrés dans Firebase"
+                android:text="Les statuts sont mis à jour par le coach"
                 android:textSize="14sp"
                 android:textColor="#777777"
                 android:layout_marginBottom="18dp" />
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerCoachPrograms"
+                android:id="@+id/recyclerMyRequests"
                 android:layout_width="match_parent"
                 android:layout_height="520dp"
                 android:clipToPadding="false"

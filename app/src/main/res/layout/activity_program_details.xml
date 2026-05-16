@@ -2,7 +2,8 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF">
+    android:background="@drawable/bg_coach_gradient"
+    android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -10,100 +11,192 @@
         android:orientation="vertical"
         android:padding="24dp">
 
+        <!-- Header -->
         <TextView
-            android:id="@+id/txtDetailTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Nom du programme"
-            android:textSize="26sp"
+            android:text="Détails du programme"
+            android:textSize="34sp"
             android:textStyle="bold"
-            android:textColor="#111111"
-            android:layout_marginBottom="16dp" />
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="24dp" />
 
         <TextView
-            android:id="@+id/txtDetailLevel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Niveau"
-            android:textSize="16sp"
-            android:layout_marginBottom="8dp" />
+            android:text="Consultez les informations, le prix et les actions disponibles."
+            android:textSize="15sp"
+            android:textColor="#DDEFE3"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="28dp" />
 
-        <TextView
-            android:id="@+id/txtDetailObjective"
+        <!-- Main card -->
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Objectif"
-            android:textSize="16sp"
-            android:layout_marginBottom="8dp" />
+            android:orientation="vertical"
+            android:padding="24dp"
+            android:background="@drawable/coach_card_bg"
+            android:elevation="8dp">
 
-        <TextView
-            android:id="@+id/txtDetailDuration"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Durée"
-            android:textSize="16sp"
-            android:layout_marginBottom="8dp" />
+            <!-- Program title -->
+            <TextView
+                android:id="@+id/txtDetailTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nom du programme"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                android:textColor="#111111"
+                android:layout_marginBottom="18dp" />
 
-        <TextView
-            android:id="@+id/txtDetailPrice"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Prix"
-            android:textSize="16sp"
-            android:layout_marginBottom="8dp" />
+            <!-- Info section -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Informations"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#2E7D32"
+                android:layout_marginBottom="12dp" />
 
-        <TextView
-            android:id="@+id/txtDetailLocation"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Localisation"
-            android:textSize="16sp"
-            android:layout_marginBottom="8dp" />
+            <TextView
+                android:id="@+id/txtDetailLevel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Niveau"
+                android:textSize="15sp"
+                android:textColor="#444444"
+                android:background="@drawable/detail_info_bg"
+                android:padding="14dp"
+                android:layout_marginBottom="10dp" />
 
-        <TextView
-            android:id="@+id/txtDetailDescription"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Description"
-            android:textSize="16sp"
-            android:layout_marginBottom="20dp" />
+            <TextView
+                android:id="@+id/txtDetailObjective"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Objectif"
+                android:textSize="15sp"
+                android:textColor="#444444"
+                android:background="@drawable/detail_info_bg"
+                android:padding="14dp"
+                android:layout_marginBottom="10dp" />
 
-        <TextView
-            android:id="@+id/txtConversionResult"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text=""
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:textColor="#2E7D32"
-            android:layout_marginBottom="16dp" />
+            <TextView
+                android:id="@+id/txtDetailDuration"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Durée"
+                android:textSize="15sp"
+                android:textColor="#444444"
+                android:background="@drawable/detail_info_bg"
+                android:padding="14dp"
+                android:layout_marginBottom="10dp" />
 
-        <Button
-            android:id="@+id/btnConvertPrice"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Convertir le prix EUR / USD" />
+            <TextView
+                android:id="@+id/txtDetailPrice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Prix"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#2E7D32"
+                android:background="@drawable/detail_info_bg"
+                android:padding="14dp"
+                android:layout_marginBottom="10dp" />
 
-        <Button
-            android:id="@+id/btnShareProgram"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Partager le programme"
-            android:layout_marginTop="12dp" />
+            <TextView
+                android:id="@+id/txtDetailLocation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Localisation"
+                android:textSize="15sp"
+                android:textColor="#444444"
+                android:background="@drawable/detail_info_bg"
+                android:padding="14dp"
+                android:layout_marginBottom="16dp" />
 
-        <Button
-            android:id="@+id/btnOpenLocation"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Ouvrir localisation"
-            android:layout_marginTop="12dp" />
+            <!-- Description -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Description"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#2E7D32"
+                android:layout_marginBottom="10dp" />
 
-        <Button
-            android:id="@+id/btnSendGoal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Envoyer mon objectif au coach"
-            android:layout_marginTop="12dp" />
+            <TextView
+                android:id="@+id/txtDetailDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Description"
+                android:textSize="15sp"
+                android:textColor="#444444"
+                android:lineSpacingExtra="4dp"
+                android:background="@drawable/detail_info_bg"
+                android:padding="14dp"
+                android:layout_marginBottom="18dp" />
+
+            <!-- Conversion result -->
+            <TextView
+                android:id="@+id/txtConversionResult"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#2E7D32"
+                android:background="@drawable/detail_result_bg"
+                android:padding="14dp"
+                android:layout_marginBottom="18dp"
+                android:visibility="gone"/>
+
+            <!-- Buttons -->
+            <Button
+                android:id="@+id/btnConvertPrice"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:text="Convertir le prix EUR / USD"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:background="@drawable/login_button_bg" />
+
+            <Button
+                android:id="@+id/btnShareProgram"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:text="Partager le programme"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:background="@drawable/login_button_bg"
+                android:layout_marginTop="12dp" />
+
+            <Button
+                android:id="@+id/btnOpenLocation"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:text="Ouvrir localisation"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:background="@drawable/login_button_bg"
+                android:layout_marginTop="12dp" />
+
+            <Button
+                android:id="@+id/btnSendGoal"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:text="Envoyer mon objectif au coach"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:background="@drawable/login_button_bg"
+                android:layout_marginTop="12dp" />
+
+        </LinearLayout>
 
     </LinearLayout>
 

@@ -17,8 +17,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 
 /*
- * CoachProgramsActivity affiche tous les programmes ajoutés par le coach.
- * Les programmes sont récupérés depuis Firebase Realtime Database.
+ * CoachProgramsActivity affiche la liste des programmes enregistrés dans Firebase.
  */
 public class CoachProgramsActivity extends AppCompatActivity {
 
@@ -36,8 +35,7 @@ public class CoachProgramsActivity extends AppCompatActivity {
         recyclerCoachPrograms = findViewById(R.id.recyclerCoachPrograms);
 
         programList = new ArrayList<>();
-        adapter = new ProgramAdapter(this, programList);
-
+        adapter = new ProgramAdapter(this, programList, false);
         recyclerCoachPrograms.setLayoutManager(new LinearLayoutManager(this));
         recyclerCoachPrograms.setAdapter(adapter);
 
@@ -46,13 +44,11 @@ public class CoachProgramsActivity extends AppCompatActivity {
         loadPrograms();
     }
 
-    /*
-     * Lire les programmes depuis Firebase.
-     */
     private void loadPrograms() {
         programsRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+
                 programList.clear();
 
                 for (DataSnapshot programSnapshot : snapshot.getChildren()) {
@@ -64,15 +60,19 @@ public class CoachProgramsActivity extends AppCompatActivity {
                 }
 
                 adapter.notifyDataSetChanged();
+
+                if (programList.isEmpty()) {
+                    Toast.makeText(CoachProgramsActivity.this,
+                            "Aucun programme trouvé",
+                            Toast.LENGTH_SHORT).show();
+                }
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(
-                        CoachProgramsActivity.this,
+                Toast.makeText(CoachProgramsActivity.this,
                         "Erreur Firebase : " + error.getMessage(),
-                        Toast.LENGTH_LONG
-                ).show();
+                        Toast.LENGTH_LONG).show();
             }
         });
     }

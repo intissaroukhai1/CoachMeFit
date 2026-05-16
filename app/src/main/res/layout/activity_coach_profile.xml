@@ -1,54 +1,165 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="24dp"
-    android:background="#FFFFFF">
+    android:background="@drawable/bg_coach_gradient"
+    android:fillViewport="true">
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Profil Coach"
-        android:textSize="28sp"
-        android:textStyle="bold"
-        android:textColor="#111111"
-        android:layout_marginBottom="24dp" />
+        android:orientation="vertical"
+        android:padding="24dp">
 
-    <TextView
-        android:id="@+id/txtCoachName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Nom : Coach Sami"
-        android:textSize="18sp"
-        android:textColor="#333333"
-        android:layout_marginBottom="12dp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Profil Coach"
+            android:textSize="34sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="24dp" />
 
-    <TextView
-        android:id="@+id/txtCoachSpeciality"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Spécialité : Fitness, cardio et musculation"
-        android:textSize="18sp"
-        android:textColor="#333333"
-        android:layout_marginBottom="12dp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Informations personnelles et professionnelles du coach."
+            android:textSize="15sp"
+            android:textColor="#DDEFE3"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="28dp" />
 
-    <TextView
-        android:id="@+id/txtCoachExperience"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Expérience : 5 ans"
-        android:textSize="18sp"
-        android:textColor="#333333"
-        android:layout_marginBottom="12dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="26dp"
+            android:background="@drawable/coach_card_bg"
+            android:elevation="8dp">
 
-    <TextView
-        android:id="@+id/txtCoachEmail"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Email : coach@coachmefit.com"
-        android:textSize="18sp"
-        android:textColor="#333333"
-        android:layout_marginBottom="12dp" />
+            <ImageView
+                android:id="@+id/imgCoachProfile"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/garcon"
+                android:scaleType="centerCrop"
+                android:layout_marginBottom="18dp"
+                android:contentDescription="Image du coach" />
 
-</LinearLayout>
+            <TextView
+                android:id="@+id/txtCoachName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nom du coach"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                android:textColor="#111111"
+                android:gravity="center"
+                android:layout_marginBottom="6dp" />
+
+            <TextView
+                android:id="@+id/txtCoachTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Coach Fitness Professionnel"
+                android:textSize="15sp"
+                android:textColor="#2E7D32"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_marginBottom="26dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Détails du profil"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#111111"
+                android:layout_marginBottom="14dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Spécialité"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:textColor="#777777"
+                android:layout_marginBottom="5dp" />
+
+            <TextView
+                android:id="@+id/txtCoachSpeciality"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Spécialité"
+                android:textSize="16sp"
+                android:textColor="#333333"
+                android:background="@drawable/detail_info_bg"
+                android:padding="14dp"
+                android:layout_marginBottom="14dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Expérience"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:textColor="#777777"
+                android:layout_marginBottom="5dp" />
+
+            <TextView
+                android:id="@+id/txtCoachExperience"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Expérience"
+                android:textSize="16sp"
+                android:textColor="#333333"
+                android:background="@drawable/detail_info_bg"
+                android:padding="14dp"
+                android:layout_marginBottom="14dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Email"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:textColor="#777777"
+                android:layout_marginBottom="5dp" />
+
+            <TextView
+                android:id="@+id/txtCoachEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="email"
+                android:textSize="16sp"
+                android:textColor="#333333"
+                android:background="@drawable/detail_info_bg"
+                android:padding="14dp"
+                android:layout_marginBottom="14dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Statut"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:textColor="#777777"
+                android:layout_marginBottom="5dp" />
+
+            <TextView
+                android:id="@+id/txtCoachStatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Statut"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#2E7D32"
+                android:background="@drawable/detail_result_bg"
+                android:padding="14dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

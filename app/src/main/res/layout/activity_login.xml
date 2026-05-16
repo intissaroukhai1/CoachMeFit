@@ -1,47 +1,192 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center"
-    android:padding="24dp"
-    android:background="#FFFFFF">
+    android:background="@drawable/bg_login_gradient"
+    android:fillViewport="true">
 
-    <!-- Titre de l'application -->
-    <TextView
-        android:id="@+id/txtAppTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="CoachMeFit"
-        android:textSize="32sp"
-        android:textStyle="bold"
-        android:textColor="#111111"
-        android:layout_marginBottom="12dp" />
-
-    <!-- Sous-titre -->
-    <TextView
-        android:id="@+id/txtAppSubtitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Programme d'entraînement sportif"
-        android:textSize="16sp"
-        android:textColor="#666666"
-        android:layout_marginBottom="40dp" />
-
-    <!-- Bouton Coach -->
-    <Button
-        android:id="@+id/btnCoach"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Connexion Coach" />
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="24dp">
 
-    <!-- Bouton Membre -->
-    <Button
-        android:id="@+id/btnMember"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Connexion Membre"
-        android:layout_marginTop="16dp" />
+        <!-- Logo / Badge -->
+        <TextView
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:gravity="center"
+            android:text="CF"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:background="@drawable/login_button_bg"
+            android:layout_marginBottom="22dp" />
 
-</LinearLayout>
+        <!-- Titre -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="CoachMeFit"
+            android:textColor="#FFFFFF"
+            android:textSize="36sp"
+            android:textStyle="bold"
+            android:gravity="center" />
+
+        <!-- Sous-titre -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Votre espace fitness personnalisé"
+            android:textColor="#D8E8DD"
+            android:textSize="15sp"
+            android:gravity="center"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="32dp" />
+
+        <!-- Carte login -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="26dp"
+            android:background="@drawable/login_card_bg"
+            android:elevation="10dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Connexion"
+                android:textColor="#111111"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Accédez à votre tableau de bord"
+                android:textColor="#777777"
+                android:textSize="14sp"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="24dp" />
+
+            <!-- Email label -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Adresse email"
+                android:textColor="#222222"
+                android:textStyle="bold"
+                android:textSize="14sp"
+                android:layout_marginBottom="6dp" />
+
+            <EditText
+                android:id="@+id/editEmail"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:background="@drawable/input_bg"
+                android:hint="coach@gmail.com"
+                android:inputType="textEmailAddress"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:textColor="#111111"
+                android:textColorHint="#9B9B9B"
+                android:textSize="15sp"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Password label -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Mot de passe"
+                android:textColor="#222222"
+                android:textStyle="bold"
+                android:textSize="14sp"
+                android:layout_marginBottom="6dp" />
+
+            <EditText
+                android:id="@+id/editPassword"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:background="@drawable/input_bg"
+                android:hint="••••••••"
+                android:inputType="textPassword"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:textColor="#111111"
+                android:textColorHint="#9B9B9B"
+                android:textSize="15sp"
+                android:layout_marginBottom="20dp" />
+
+            <!-- Role label -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Type de compte"
+                android:textColor="#222222"
+                android:textStyle="bold"
+                android:textSize="14sp"
+                android:layout_marginBottom="8dp" />
+
+            <RadioGroup
+                android:id="@+id/radioRoleGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="24dp">
+
+                <RadioButton
+                    android:id="@+id/radioCoach"
+                    android:layout_width="0dp"
+                    android:layout_height="52dp"
+                    android:layout_weight="1"
+                    android:text="Coach"
+                    android:textColor="#222222"
+                    android:textSize="15sp"
+                    android:gravity="center"
+                    android:buttonTint="#2E7D32"
+                    android:background="@drawable/role_radio_bg"
+                    android:layout_marginEnd="8dp" />
+
+                <RadioButton
+                    android:id="@+id/radioMember"
+                    android:layout_width="0dp"
+                    android:layout_height="52dp"
+                    android:layout_weight="1"
+                    android:text="Membre"
+                    android:textColor="#222222"
+                    android:textSize="15sp"
+                    android:gravity="center"
+                    android:buttonTint="#2E7D32"
+                    android:background="@drawable/role_radio_bg"
+                    android:layout_marginStart="8dp" />
+
+            </RadioGroup>
+
+            <Button
+                android:id="@+id/btnLogin"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="Se connecter"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:background="@drawable/login_button_bg" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="CoachMeFit • Fitness management app"
+                android:textColor="#999999"
+                android:textSize="12sp"
+                android:gravity="center"
+                android:layout_marginTop="20dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

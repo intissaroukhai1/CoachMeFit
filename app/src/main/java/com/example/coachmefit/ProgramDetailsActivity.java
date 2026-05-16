@@ -115,6 +115,8 @@ public class ProgramDetailsActivity extends AppCompatActivity {
                 + "Prix en USD : " + String.format("%.2f", priceUsd) + " $";
 
         txtConversionResult.setText(result);
+        // Afficher la zone de résultat seulement après le clic sur Convertir
+        txtConversionResult.setVisibility(TextView.VISIBLE);
     }
 
     /*
@@ -170,13 +172,16 @@ public class ProgramDetailsActivity extends AppCompatActivity {
             return;
         }
 
+        String memberEmail = getSharedPreferences("MemberSession", MODE_PRIVATE)
+                .getString("email", "unknown");
+
         GoalRequest request = new GoalRequest(
                 requestId,
                 title,
                 goal,
-                "En attente"
+                "En attente",
+                memberEmail
         );
-
         requestsRef.child(requestId).setValue(request)
                 .addOnSuccessListener(unused -> {
                     Toast.makeText(

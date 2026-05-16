@@ -1,0 +1,19 @@
+{
+  "users": {
+    "coach1": {
+      "email": "mohamed@gmail.com",
+      "password": "123456",
+      "role": "coach",
+      "name": "Mohamed",
+      "speciality": "Fitness, cardio et musculation",
+      "experience": "5 ans",
+      "status": "Disponible pour accompagner les membres"
+    },
+    "member1": {
+      "email": "intissar@gmail.com",
+      "password": "123456",
+      "role": "member",
+      "name": "Intissar"
+    }
+  }
+}
