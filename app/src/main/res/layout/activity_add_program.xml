@@ -2,7 +2,8 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF">
+    android:background="@drawable/bg_coach_gradient"
+    android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -10,77 +11,226 @@
         android:orientation="vertical"
         android:padding="24dp">
 
+        <!-- Header -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Ajouter un programme"
-            android:textSize="26sp"
+            android:text="Nouveau programme"
+            android:textSize="34sp"
             android:textStyle="bold"
-            android:textColor="#111111"
-            android:layout_marginBottom="20dp" />
-
-        <EditText
-            android:id="@+id/editTitle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Nom du programme"
-            android:inputType="text" />
-
-        <EditText
-            android:id="@+id/editLevel"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Niveau : Débutant / Intermédiaire / Avancé"
-            android:inputType="text"
-            android:layout_marginTop="12dp" />
-
-        <EditText
-            android:id="@+id/editObjective"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Objectif : Perte de poids / Musculation..."
-            android:inputType="text"
-            android:layout_marginTop="12dp" />
-
-        <EditText
-            android:id="@+id/editDuration"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Durée : 4 semaines"
-            android:inputType="text"
-            android:layout_marginTop="12dp" />
-
-        <EditText
-            android:id="@+id/editPrice"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Prix en TND"
-            android:inputType="numberDecimal"
-            android:layout_marginTop="12dp" />
-
-        <EditText
-            android:id="@+id/editLocation"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Localisation de la salle"
-            android:inputType="text"
-            android:layout_marginTop="12dp" />
-
-        <EditText
-            android:id="@+id/editDescription"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Description du programme"
-            android:inputType="textMultiLine"
-            android:minLines="3"
-            android:layout_marginTop="12dp" />
-
-        <Button
-            android:id="@+id/btnSaveProgram"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Enregistrer"
+            android:textColor="#FFFFFF"
             android:layout_marginTop="24dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Créez un programme sportif personnalisé pour vos membres."
+            android:textSize="15sp"
+            android:textColor="#DDEFE3"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="28dp" />
+
+        <!-- Form card -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp"
+            android:background="@drawable/coach_card_bg"
+            android:elevation="8dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Informations du programme"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="#111111"
+                android:layout_marginBottom="6dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Remplissez les détails ci-dessous"
+                android:textSize="14sp"
+                android:textColor="#777777"
+                android:layout_marginBottom="22dp" />
+
+            <!-- Nom -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nom du programme"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="#222222"
+                android:layout_marginBottom="6dp" />
+
+            <EditText
+                android:id="@+id/editTitle"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:hint="Ex : Cardio Débutant"
+                android:inputType="text"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:textColor="#111111"
+                android:textColorHint="#999999"
+                android:background="@drawable/input_bg"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Niveau -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Niveau"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="#222222"
+                android:layout_marginBottom="6dp" />
+
+            <EditText
+                android:id="@+id/editLevel"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:hint="Débutant / Intermédiaire / Avancé"
+                android:inputType="text"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:textColor="#111111"
+                android:textColorHint="#999999"
+                android:background="@drawable/input_bg"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Objectif -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Objectif"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="#222222"
+                android:layout_marginBottom="6dp" />
+
+            <EditText
+                android:id="@+id/editObjective"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:hint="Perte de poids / Musculation..."
+                android:inputType="text"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:textColor="#111111"
+                android:textColorHint="#999999"
+                android:background="@drawable/input_bg"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Durée -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Durée"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="#222222"
+                android:layout_marginBottom="6dp" />
+
+            <EditText
+                android:id="@+id/editDuration"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:hint="Ex : 4 semaines"
+                android:inputType="text"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:textColor="#111111"
+                android:textColorHint="#999999"
+                android:background="@drawable/input_bg"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Prix -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Prix en TND"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="#222222"
+                android:layout_marginBottom="6dp" />
+
+            <EditText
+                android:id="@+id/editPrice"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:hint="Ex : 80"
+                android:inputType="numberDecimal"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:textColor="#111111"
+                android:textColorHint="#999999"
+                android:background="@drawable/input_bg"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Localisation -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Localisation de la salle"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="#222222"
+                android:layout_marginBottom="6dp" />
+
+            <EditText
+                android:id="@+id/editLocation"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:hint="Ex : Tunis Centre"
+                android:inputType="text"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:textColor="#111111"
+                android:textColorHint="#999999"
+                android:background="@drawable/input_bg"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Description -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Description"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="#222222"
+                android:layout_marginBottom="6dp" />
+
+            <EditText
+                android:id="@+id/editDescription"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:hint="Décrivez le contenu du programme..."
+                android:inputType="textMultiLine"
+                android:gravity="top"
+                android:minLines="4"
+                android:padding="16dp"
+                android:textColor="#111111"
+                android:textColorHint="#999999"
+                android:background="@drawable/input_bg"
+                android:layout_marginBottom="24dp" />
+
+            <!-- Save button -->
+            <Button
+                android:id="@+id/btnSaveProgram"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="Enregistrer le programme"
+                android:textAllCaps="false"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:background="@drawable/login_button_bg" />
+
+        </LinearLayout>
 
     </LinearLayout>
 

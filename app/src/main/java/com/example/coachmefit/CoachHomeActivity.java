@@ -3,22 +3,21 @@ package com.example.coachmefit;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 /*
  * CoachHomeActivity représente l'espace du coach.
- * Cette activité utilise une ListView pour afficher un menu simple.
- * Chaque élément du menu permet au coach d'accéder à une fonctionnalité.
+ * Elle utilise une ListView pour afficher les actions disponibles.
+ * Elle contient aussi un bouton de déconnexion.
  */
 public class CoachHomeActivity extends AppCompatActivity {
 
-    // Déclaration de la ListView
     private ListView listCoachMenu;
+    private Button btnLogout;
 
-    // Tableau contenant les éléments du menu coach
     private String[] coachMenuItems = {
             "Ajouter un programme",
             "Liste des programmes",
@@ -31,48 +30,52 @@ public class CoachHomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_coach_home);
 
-        // Liaison entre la variable Java et la ListView XML
         listCoachMenu = findViewById(R.id.listCoachMenu);
+        btnLogout = findViewById(R.id.btnLogout);
 
-        /*
-         * ArrayAdapter permet de transformer le tableau coachMenuItems
-         * en éléments visibles dans la ListView.
-         */
         ArrayAdapter<String> adapter = new ArrayAdapter<>(
                 this,
-                android.R.layout.simple_list_item_1,
+                R.layout.item_coach_menu,
                 coachMenuItems
         );
 
-        // Affectation de l'adapter à la ListView
         listCoachMenu.setAdapter(adapter);
 
-        /*
-         * Gestion du clic sur un élément de la liste.
-         * position = index de l'élément cliqué.
-         */
         listCoachMenu.setOnItemClickListener((parent, view, position, id) -> {
 
             if (position == 0) {
-                // Ajouter un programme
-                Intent intent = new Intent(CoachHomeActivity.this, AddProgramActivity.class);
-                startActivity(intent);
+                startActivity(new Intent(CoachHomeActivity.this, AddProgramActivity.class));
 
             } else if (position == 1) {
-                // Liste des programmes
-                Intent intent = new Intent(CoachHomeActivity.this, CoachProgramsActivity.class);
-                startActivity(intent);
+                startActivity(new Intent(CoachHomeActivity.this, CoachProgramsActivity.class));
 
             } else if (position == 2) {
-                // Demandes des membres
-                Intent intent = new Intent(CoachHomeActivity.this, RequestsActivity.class);
-                startActivity(intent);
+                startActivity(new Intent(CoachHomeActivity.this, RequestsActivity.class));
 
             } else if (position == 3) {
-                // Profil coach
-                Intent intent = new Intent(CoachHomeActivity.this, CoachProfileActivity.class);
-                startActivity(intent);
+                startActivity(new Intent(CoachHomeActivity.this, CoachProfileActivity.class));
             }
         });
+
+        btnLogout.setOnClickListener(v -> logout());
+    }
+
+    /*
+     * Déconnexion du coach.
+     * On supprime les informations de session et on retourne vers LoginActivity.
+     */
+    private void logout() {
+        getSharedPreferences("CoachSession", MODE_PRIVATE)
+                .edit()
+                .clear()
+                .apply();
+
+        Intent intent = new Intent(CoachHomeActivity.this, LoginActivity.class);
+
+        // Supprime les anciennes activités de la pile
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+
+        startActivity(intent);
+        finish();
     }
 }

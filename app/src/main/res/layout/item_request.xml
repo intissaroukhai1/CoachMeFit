@@ -3,9 +3,9 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="16dp"
-    android:layout_marginBottom="12dp"
-    android:background="#F5F5F5">
+    android:padding="18dp"
+    android:layout_marginBottom="14dp"
+    android:background="@drawable/request_item_bg">
 
     <TextView
         android:id="@+id/txtRequestProgram"
@@ -23,15 +23,54 @@
         android:text="Objectif"
         android:textSize="15sp"
         android:textColor="#555555"
-        android:layout_marginTop="6dp" />
+        android:layout_marginTop="8dp"
+        android:lineSpacingExtra="3dp" />
 
     <TextView
         android:id="@+id/txtRequestStatus"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Statut"
-        android:textSize="15sp"
-        android:textColor="#555555"
-        android:layout_marginTop="4dp" />
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:textColor="#2E7D32"
+        android:background="@drawable/request_status_bg"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:paddingTop="7dp"
+        android:paddingBottom="7dp"
+        android:layout_marginTop="12dp" />
+
+    <LinearLayout
+        android:id="@+id/layoutActions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="14dp">
+
+        <Button
+            android:id="@+id/btnAcceptRequest"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:text="Accepter"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:background="@drawable/login_button_bg" />
+
+        <Button
+            android:id="@+id/btnRejectRequest"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:text="Refuser"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:background="@drawable/logout_button_bg"
+            android:layout_marginStart="10dp" />
+
+    </LinearLayout>
 
 </LinearLayout>

@@ -1,23 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="20dp"
-    android:background="#FFFFFF">
+    android:background="@drawable/bg_coach_gradient"
+    android:fillViewport="true">
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Demandes des membres"
-        android:textSize="26sp"
-        android:textStyle="bold"
-        android:textColor="#111111"
-        android:layout_marginBottom="16dp" />
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="24dp">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerRequests"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        <!-- Header -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Demandes"
+            android:textSize="34sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="24dp" />
 
-</LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Consultez les objectifs envoyés par les membres."
+            android:textSize="15sp"
+            android:textColor="#DDEFE3"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="28dp" />
+
+        <!-- Card container -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="22dp"
+            android:background="@drawable/coach_card_bg"
+            android:elevation="8dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Demandes des membres"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="#111111"
+                android:layout_marginBottom="6dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Objectifs reçus depuis Firebase"
+                android:textSize="14sp"
+                android:textColor="#777777"
+                android:layout_marginBottom="18dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerRequests"
+                android:layout_width="match_parent"
+                android:layout_height="520dp"
+                android:clipToPadding="false"
+                android:paddingBottom="8dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

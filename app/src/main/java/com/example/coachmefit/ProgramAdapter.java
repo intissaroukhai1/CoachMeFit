@@ -14,15 +14,27 @@ import androidx.recyclerview.widget.RecyclerView;
 /*
  * ProgramAdapter permet d'afficher la liste des programmes
  * dans un RecyclerView.
+ *
+ * canOpenDetails :
+ * - true  : le membre peut cliquer et voir les détails
+ * - false : le coach/admin voit seulement la liste sans accès aux détails
  */
 public class ProgramAdapter extends RecyclerView.Adapter<ProgramAdapter.ProgramViewHolder> {
 
     private Context context;
     private List<Program> programList;
+    private boolean canOpenDetails;
 
     public ProgramAdapter(Context context, List<Program> programList) {
         this.context = context;
         this.programList = programList;
+        this.canOpenDetails = true;
+    }
+
+    public ProgramAdapter(Context context, List<Program> programList, boolean canOpenDetails) {
+        this.context = context;
+        this.programList = programList;
+        this.canOpenDetails = canOpenDetails;
     }
 
     @NonNull
@@ -42,22 +54,27 @@ public class ProgramAdapter extends RecyclerView.Adapter<ProgramAdapter.ProgramV
         holder.txtProgramPrice.setText("Prix : " + program.getPriceTnd() + " TND");
 
         /*
-         * Quand le membre clique sur un programme,
-         * on ouvre ProgramDetailsActivity avec les données du programme.
+         * Si canOpenDetails = true, l'utilisateur peut ouvrir les détails.
+         * Si canOpenDetails = false, le clic est désactivé.
          */
-        holder.itemView.setOnClickListener(v -> {
-            Intent intent = new Intent(context, ProgramDetailsActivity.class);
+        if (canOpenDetails) {
+            holder.itemView.setOnClickListener(v -> {
+                Intent intent = new Intent(context, ProgramDetailsActivity.class);
 
-            intent.putExtra("title", program.getTitle());
-            intent.putExtra("level", program.getLevel());
-            intent.putExtra("objective", program.getObjective());
-            intent.putExtra("duration", program.getDuration());
-            intent.putExtra("priceTnd", program.getPriceTnd());
-            intent.putExtra("description", program.getDescription());
-            intent.putExtra("location", program.getLocation());
+                intent.putExtra("title", program.getTitle());
+                intent.putExtra("level", program.getLevel());
+                intent.putExtra("objective", program.getObjective());
+                intent.putExtra("duration", program.getDuration());
+                intent.putExtra("priceTnd", program.getPriceTnd());
+                intent.putExtra("description", program.getDescription());
+                intent.putExtra("location", program.getLocation());
 
-            context.startActivity(intent);
-        });
+                context.startActivity(intent);
+            });
+        } else {
+            holder.itemView.setOnClickListener(null);
+            holder.itemView.setClickable(false);
+        }
     }
 
     @Override

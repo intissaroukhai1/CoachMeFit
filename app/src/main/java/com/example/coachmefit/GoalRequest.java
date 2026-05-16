@@ -2,7 +2,7 @@ package com.example.coachmefit;
 
 /*
  * Cette classe représente une demande envoyée par un membre au coach.
- * Elle sera enregistrée dans Firebase sous le noeud "requests".
+ * Elle contient aussi l'email du membre pour filtrer ses propres demandes.
  */
 public class GoalRequest {
 
@@ -10,16 +10,17 @@ public class GoalRequest {
     private String programTitle;
     private String memberGoal;
     private String status;
+    private String memberEmail;
 
-    // Constructeur vide obligatoire pour Firebase
     public GoalRequest() {
     }
 
-    public GoalRequest(String id, String programTitle, String memberGoal, String status) {
+    public GoalRequest(String id, String programTitle, String memberGoal, String status, String memberEmail) {
         this.id = id;
         this.programTitle = programTitle;
         this.memberGoal = memberGoal;
         this.status = status;
+        this.memberEmail = memberEmail;
     }
 
     public String getId() {
@@ -38,6 +39,10 @@ public class GoalRequest {
         return status;
     }
 
+    public String getMemberEmail() {
+        return memberEmail;
+    }
+
     public void setId(String id) {
         this.id = id;
     }
@@ -52,5 +57,9 @@ public class GoalRequest {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public void setMemberEmail(String memberEmail) {
+        this.memberEmail = memberEmail;
     }
 }
